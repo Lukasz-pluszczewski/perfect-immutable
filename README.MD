@@ -3,7 +3,7 @@
 
 [![CircleCI](https://circleci.com/gh/Lukasz-pluszczewski/perfect-immutable.svg?style=svg)](https://circleci.com/gh/Lukasz-pluszczewski/perfect-immutable)
 
-You're smart. You avoid mutating objects in your application. But you don't want to install big Immutable.js library and you don't want to refactor all your objects. Now you can have benefits of Immutable.js on normal JavaScript objects! Look for [real life exampes](docs/EXAMPLES).
+You're smart. You avoid mutating objects in your application. But you don't want to install big Immutable.js library and you don't want to refactor all your objects. Now you can have benefits of Immutable.js on normal JavaScript objects! Look for [real life exampes](docs/EXAMPLES.md).
 
 **NOTE:**
 
@@ -26,12 +26,12 @@ immu.splice();
 ```
 
 ## Docs
-- [API](docs/API)
-- [Examples](docs/EXAMPLES)
-- [Changelog](docs/CHANGELOG)
+- [API](docs/API.md)
+- [Examples](docs/EXAMPLES.md)
+- [Changelog](docs/CHANGELOG.md)
 
 ## Credits
-1. stringToPath function (used e.g. in set method) is based on lodash's function with same name (also used in `_.set()`)
+1. stringToPath function (used e.g. in set method) is based on lodash's function with the same name (also used in `_.set()`)
 2. immutable array functions (like splice) were created by [Vincent Billey](https://vincent.billey.me/)
 3. [Brainhub](https://brainhub.eu/) created [eslint config](https://github.com/adam-golab/eslint-config-brainhub) used in this repo
 
@@ -49,6 +49,9 @@ There are at least 3 options:
 3. Add an issue
 
 ## TODO
-- improve readme (add more usage examples and complete API documentation)
-- add a way to immutably add value to nested array when batch-setting values in nested structure
-- add more immutable functions
+- improve readme (add more usage examples)
+- add more immutable functions:
+  - delete similar to Immutable.js `deleteIn`
+  - filter
+  - reverse
+  - sort
