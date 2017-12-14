@@ -9,7 +9,6 @@ import { tail, isPlainObject, isEmpty, has, reduce } from 'lodash';
  * @return {object} new object with value(s) changed
  */
 const immutableSet = (object, path, value = null, delimiter = '.') => {
-  // console.log('immutableSet', {object, path, value, delimiter});
   if (!path) {
     return value;
   }
