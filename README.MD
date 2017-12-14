@@ -3,63 +3,37 @@
 
 [![CircleCI](https://circleci.com/gh/Lukasz-pluszczewski/perfect-immutable.svg?style=svg)](https://circleci.com/gh/Lukasz-pluszczewski/perfect-immutable)
 
-You're smart. You avoid mutating objects in your application. But you don't want to install big Immutable.js library and you don't want to refactor all you objects. Now you can have benefits of Immutable.js on normal JavaScript objects!
+You're smart. You avoid mutating objects in your application. But you don't want to install big Immutable.js library and you don't want to refactor all your objects. Now you can have benefits of Immutable.js on normal JavaScript objects! Look for [real life exampes](docs/EXAMPLES).
 
 **NOTE:**
 
-This library is in early stage of development. Currently there is only one well tested (and already used in production) method: `set`. If you want to help feel free to submit you PR.
+This library is in early stage of development. Currently there is only one well tested (and already used in production) method: `set`. If you want to help feel free to submit your PR.
 
 ## Getting started
 ##### Install library
 `npm i perfect-immutable --save`
 
-## API
-#### `set(object, path, value, delimiter)`
- - `import { set } from 'perfect-immutable'`
- - `import immu from 'perfect-immutable'`
- - works like lodash's _.set() but does not mutate the object (can be used to easily, immutably set value in complicated nested structure)
- - arguments:
-   - **object**: *object* object to set value in
-   - **path**: *string|assignmentsObject}* path to the value you want to change, can be deep where field values are divided by *delimiter* (default: .) e.g. 'field.subField.somethingElse'. Can be an object e.g. { 'field.subField': 'newValue', 'anotherField.anotherSubField': 'anotherNewValue' } Lodash's array like syntax is not supported (e.g. 'field\[1\].subField')
-   - **value**: *any* value to be set in the path (if path is an object *value* is ignored)
-   - **delimiter**: *string* (defaut: **'.'**) delimiter used in the path
- - returns **newObject**
+##### Import functions you need
+```
+import { set, splice } from 'perfect-immutable';
+```
+or
+```
+import immu from 'perfect-immutable';
 
-## Usage example
-Imagine [reducer](https://redux.js.org/docs/basics/Reducers.html):
-```javascript
-case MY_FANCY_ACTION
- return {
-   ...state,
-   fieldOne: {
-     ...state.fieldOne,
-     fieldTwo: {
-       ...state.fieldTwo,
-       fieldThree: 'foo',
-     },
-   },
- };
+immu.set();
+immu.splice();
 ```
 
-With prefect-immutable you can:
-```javascript
-import { set } from 'perfect-immutable';
+## Docs
+- [API](docs/API)
+- [Examples](docs/EXAMPLES)
+- [Changelog](docs/CHANGELOG)
 
-case MY_FANCY_ACTION
- return set(state, 'fieldOne.fieldTwo.fieldThree', 'foo');
-```
-
-You can even set multiple fields at once:
-```javascript
-import { set } from 'perfect-immutable';
-
-case MY_FANCY_ACTION
- return set(state, {
-   'fieldOne.fieldTwo.foo': 'newValue',
-   'fieldOne.fieldTwo.bar': 'anotherValue',
-   'fieldOne.fieldTwo.baz': 'thirdValue',
- });
-```
+## Credits
+1. stringToPath function (used e.g. in set method) is based on lodash's function with same name (also used in `_.set()`)
+2. immutable array functions (like splice) were created by [Vincent Billey](https://vincent.billey.me/)
+3. [Brainhub](https://brainhub.eu/) created [eslint config](https://github.com/adam-golab/eslint-config-brainhub) used in this repo
 
 ## FAQ
 #### Why this exists?
@@ -73,3 +47,8 @@ There are at least 3 options:
 1. Add an issue, write test(s) for bug you found, write fix that will make your test(s) pass, submit pull request
 2. Add an issue, write test(s) for bug you found, submit pull request with you test(s)
 3. Add an issue
+
+## TODO
+- improve readme (add more usage examples and complete API documentation)
+- add a way to immutably add value to nested array when batch-setting values in nested structure
+- add more immutable functions
