@@ -25,6 +25,30 @@ This library is in early stage of development. Currently there is only one well 
    - **delimiter**: *string* (defaut: **'.'**) delimiter used in the path
  - returns **newObject**
 
+## Usage example
+Imagine [reducer](https://redux.js.org/docs/basics/Reducers.html):
+```javascript
+case MY_FANCY_ACTION
+ return {
+   ...state,
+   fieldOne: {
+     ...state.fieldOne,
+     fieldTwo: {
+       ...state.fieldTwo,
+       fieldThree: 'foo',
+     },
+   },
+ };
+```
+
+With prefect-immutable you can
+```javascript
+import { set } from 'perfect-immutable';
+
+case MY_FANCY_ACTION
+ return set(state, 'fieldOne.fieldTwo.fieldThree', 'foo');
+```
+
 ## FAQ
 #### Why this exists?
 There are a lot of Immutable.js-like libraries, but they all force you to use immutable specific objects (like Map) and you cannot use their methods on normal JavaScript objects. That's not a problem when you're starting new project and decide to use e.g. Immutable.js but what if the app is already there, and you want immutable tools?
