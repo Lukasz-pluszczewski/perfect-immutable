@@ -41,12 +41,24 @@ case MY_FANCY_ACTION
  };
 ```
 
-With prefect-immutable you can
+With prefect-immutable you can:
 ```javascript
 import { set } from 'perfect-immutable';
 
 case MY_FANCY_ACTION
  return set(state, 'fieldOne.fieldTwo.fieldThree', 'foo');
+```
+
+You can even set multiple fields at once:
+```javascript
+import { set } from 'perfect-immutable';
+
+case MY_FANCY_ACTION
+ return set(state, {
+   'fieldOne.fieldTwo.foo': 'newValue',
+   'fieldOne.fieldTwo.bar': 'anotherValue',
+   'fieldOne.fieldTwo.baz': 'thirdValue',
+ });
 ```
 
 ## FAQ
