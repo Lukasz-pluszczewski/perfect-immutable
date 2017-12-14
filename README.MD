@@ -53,5 +53,3 @@ There are at least 3 options:
 - add more immutable functions:
   - delete similar to Immutable.js `deleteIn`
   - filter
-  - reverse
-  - sort
