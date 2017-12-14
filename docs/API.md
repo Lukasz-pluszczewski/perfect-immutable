@@ -16,3 +16,56 @@
     - **deleteCount**: *number* an integer indicating the number of old array elements to remove
     - **items**: *any* (optional) the elements to add to the array, beginning at the `start` index
 - returns **newArray**
+
+#### `push(array, ...items)`
+- `import { push } from 'perfect-immutable'`
+- works like array.prototype.push but creates new array with added entries instead of mutating existing one
+- arguments:
+    - **array**: *array* source array
+    - **items**: *any* the elements to add to the array
+- returns **newArray**
+
+#### `pop(array)`
+- `import { pop } from 'perfect-immutable'`
+- works like array.prototype.pop but creates new array with last element removed
+- arguments:
+    - **array**: *array* source array
+- returns **newArray**
+
+#### `shift(array)`
+- `import { shift } from 'perfect-immutable'`
+- works like array.prototype.shift but creates new array with first element removed
+- arguments:
+    - **array**: *array* source array
+- returns **newArray**
+
+#### `unshift(array, ...items)`
+- `import { unshift } from 'perfect-immutable'`
+- returns new array with items added at the beginning
+- arguments:
+    - **array**: *array* source array
+    - **items**: *any* the elements to add to the beginning of an array, will appear in the array in the same order in which they were passed to the function
+- returns **newArray**
+
+#### `sort(array, compareFunction)`
+- `import { sort } from 'perfect-immutable'`
+- Returns new, sorted array without mutating the source
+- arguments:
+    - **array**: *array* source array
+    - **compareFunction**: *function* function to compare arrays values
+- returns **newArray**
+
+#### `reverse(array)`
+- `import { reverse } from 'perfect-immutable'`
+- works like array.prototype.reverse but creates new, reversed array
+- arguments:
+    - **array**: *array* source array
+- returns **newArray**
+
+#### `immutableDelete(array, index)`
+- `import { immutableDelete } from 'perfect-immutable'`
+- creates new array with one element removed
+- arguments:
+    - **array**: *array* source array
+    - **index**: *number* index of element to be removed
+- returns **newArray**
