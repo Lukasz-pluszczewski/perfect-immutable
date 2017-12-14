@@ -15,7 +15,7 @@ This library is in early stage of development. Currently there is only one well 
 
 ##### Import functions you need
 ```
-import { set, splice } from 'perfect-immutable';
+import { set, splice, push, pop, shift, unshift, sort, reverse, immutableDelete } from 'perfect-immutable';
 ```
 or
 ```
@@ -23,6 +23,13 @@ import immu from 'perfect-immutable';
 
 immu.set();
 immu.splice();
+immu.push();
+immu.pop();
+immu.shift();
+immu.unshift();
+immu.sort();
+immu.reverse();
+immu.immutableDelete();
 ```
 
 ## Docs
