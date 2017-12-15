@@ -11,3 +11,4 @@
 
 #### 1.3.0
 - Added transformFunction functionality in `set` method
+- Added functional (auto carried, options-first) versions of all methods
