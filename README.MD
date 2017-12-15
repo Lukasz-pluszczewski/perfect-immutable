@@ -47,7 +47,7 @@ immu.immutableDelete();
 There are a lot of Immutable.js-like libraries, but they all force you to use immutable specific objects (like Map) and you cannot use their methods on normal JavaScript objects. That's not a problem when you're starting new project and decide to use e.g. Immutable.js but what if the app is already there, and you want immutable tools?
 
 #### Are there good alternatives?
-I don't know about any. If you do, please, let me know!
+- [immutability-helper](https://github.com/kolodny/immutability-helper) - Library based on react-addons-update, that solve exactly the same problem but with mongodb-like syntax instead of lodash or Immutable.js-like syntax. Definitely worth giving it a try. However, this library provides you with different syntax and allows you to use all helper methods (like immutable push) separately.
 
 #### I found a bug! What should I do?
 There are at least 3 options:
