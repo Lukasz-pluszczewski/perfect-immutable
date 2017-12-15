@@ -144,6 +144,37 @@ describe('set', () => {
     ]);
   });
 
+  it('should set a function value if provided with appropriate flag', () => {
+    const transformFunction = x => x * 2;
+    const obj1 = { foo: [1, 2, 3] };
+
+    const obj2 = set(obj1, 'foo[1]', transformFunction, true);
+
+    expect(obj2, 'Newly created object equals source object. It has probably been mutated').to.not.equal(obj1);
+    expect(obj2).to.be.deep.equal({ foo: [1, transformFunction, 3] });
+  });
+  it('should set a value returned by a transform function', () => {
+    const transformFunction = x => x * 2;
+    const obj1 = { foo: [1, 2, 3] };
+
+    const obj2 = set(obj1, 'foo[1]', transformFunction);
+
+    expect(obj2, 'Newly created object equals source object. It has probably been mutated').to.not.equal(obj1);
+    expect(obj2).to.be.deep.equal({ foo: [1, 4, 3] });
+  });
+  it('should set a batch of values returned by a transform functions', () => {
+    const transformFunction = x => x * 2;
+    const obj1 = { foo: [1, 2, 3] };
+
+    const obj2 = set(obj1, {
+      'foo[1]': transformFunction,
+      'foo[2]': transformFunction,
+    });
+
+    expect(obj2, 'Newly created object equals source object. It has probably been mutated').to.not.equal(obj1);
+    expect(obj2).to.be.deep.equal({ foo: [1, 4, 6] });
+  });
+
   it('should throw an error when provided with unsupported value as a first argument (not object/array)', () => {
     expect(() => set(2, '[2]', 'value')).to.throw(Error);
   });

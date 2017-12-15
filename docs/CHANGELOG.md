@@ -8,3 +8,7 @@
 
 #### 1.2.0
 - Added push, pop, shift, unshift, sort, reverse, immutableDelete methods for arrays
+
+#### 1.3.0
+- Added transformFunction functionality in `set` method
+- Added functional (auto carried, options-first) versions of all methods

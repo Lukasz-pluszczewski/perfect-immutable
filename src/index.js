@@ -7,6 +7,9 @@ import immuUnshift from './unshift';
 import immuSort from './sort';
 import immuReverse from './reverse';
 import immuDelete from './delete';
+import immuFilter from './filter';
+
+import immuFp from './fp/index';
 
 export const set = immuSet;
 export const splice = immuSplice;
@@ -17,6 +20,8 @@ export const unshift = immuUnshift;
 export const sort = immuSort;
 export const reverse = immuReverse;
 export const immutableDelete = immuDelete;
+export const filter = immuFilter;
+export const fp = immuFp;
 
 export default {
   set,
@@ -28,6 +33,8 @@ export default {
   sort,
   reverse,
   immutableDelete,
+  filter,
+  fp,
 };
 
 

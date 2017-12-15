@@ -69,3 +69,10 @@
     - **array**: *array* source array
     - **index**: *number* index of element to be removed
 - returns **newArray**
+
+#### `filter(array, predicate)`
+- `import { filter } from 'perfect-immutable';`
+- creates new array with elements predicate returned truthy for (is just a wrapper for lodash [filter](https://lodash.com/docs/4.17.4#filter) and can be used the same way
+- arguments:
+   - **array**: *array* source array
+   - **predicate**: *function|object|array|string* function invoked per iteration (see lodash filter documentation)
