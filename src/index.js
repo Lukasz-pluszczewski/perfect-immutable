@@ -9,7 +9,7 @@ import immuReverse from './reverse';
 import immuDelete from './delete';
 import immuFilter from './filter';
 
-import immuFp from './fp';
+import immuFp from './fp/index';
 
 export const set = immuSet;
 export const splice = immuSplice;
