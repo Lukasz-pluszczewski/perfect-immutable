@@ -32,24 +32,4 @@ export default [
       },
     ],
   },
-  {
-    input: 'src/fp/index.js',
-    plugins: [
-      babel(babelrc({
-        addModuleOptions: false,
-      })),
-    ],
-    external,
-    exports: 'named',
-    globals: {
-      lodash: '_',
-    },
-    output: [
-      {
-        file: 'lib/fp/perfect-immutable.mjs',
-        format: 'es',
-        sourcemap: true,
-      },
-    ],
-  },
 ];

@@ -16,8 +16,6 @@ import immu from 'perfect-immutable'; // immu object has all above methods
 ```
 or, for functional programming friendly, auto-carried, predicate-first functions
 ```
-import { set, splice, push, pop, shift, unshift, sort, reverse, filter, immutableDelete } from 'perfect-immutable/fp';
-import immu from 'perfect-immutable/fp'; // immu object has all above methods
 import { fp } from 'perfect-immutable'; // fp object has all above methods
 ```
 
