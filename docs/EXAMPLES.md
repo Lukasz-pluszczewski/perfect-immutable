@@ -8,7 +8,7 @@ case MY_FANCY_ACTION
    fieldOne: {
      ...state.fieldOne,
      fieldTwo: {
-       ...state.fieldTwo,
+       ...state.fieldOne.fieldTwo,
        fieldThree: 'foo',
      },
    },
@@ -42,7 +42,7 @@ For examples of usage the functional versions of immutable methods see [here](EX
 ## Arrays functions
 
 ### splice
-```
+```javascript
 import { splice } from 'perfect-immutable';
 
 const arr1 = ['first', 'two', 'three', 'fourth'];
@@ -53,7 +53,7 @@ console.log(arr2); // ['first', 'second', 'third', 'fourth']
 ```
 
 ### push
-```
+```javascript
 import { push } from 'perfect-immutable';
 
 const arr1 = ['one', 'two'];
@@ -64,7 +64,7 @@ console.log(arr2); // ['one', 'two', 'three', 'four']
 ```
 
 ### pop
-```
+```javascript
 import { pop } from 'perfect-immutable';
 
 const arr1 = ['one', 'two', 'three'];
@@ -75,7 +75,7 @@ console.log(arr2); // ['one', 'two']
 ```
 
 ### shift
-```
+```javascript
 import { shift } from 'perfect-immutable';
 
 const arr1 = ['one', 'two', 'three'];
@@ -86,7 +86,7 @@ console.log(arr2); // ['two', 'three']
 ```
 
 ### unshift
-```
+```javascript
 import { unshift } from 'perfect-immutable';
 
 const arr1 = ['three', 'four'];
@@ -97,7 +97,7 @@ console.log(arr2); // ['one', 'two', 'three', 'four']
 ```
 
 ### sort
-```
+```javascript
 import { sort } from 'perfect-immutable';
 
 const arr1 = [4, 3, 1, 7, 3];
@@ -108,7 +108,7 @@ console.log(arr2); // [1, 3, 3, 4, 7]
 ```
 
 ### reverse
-```
+```javascript
 import { reverse } from 'perfect-immutable';
 
 const arr1 = [4, 3, 2, 1];
@@ -119,7 +119,7 @@ console.log(arr2); // [1, 2, 3, 4]
 ```
 
 ### immutableDelete
-```
+```javascript
 import { immutableDelete } from 'perfect-immutable';
 
 const arr1 = ['one', 'two', 'two', 'three'];
@@ -130,7 +130,7 @@ console.log(arr2); // ['one', 'two', 'three']
 ```
 
 ### filter
-```
+```javascript
 import { filter } from 'perfect-immutable';
 
 const arr1 = [{ id: 1, active: true }, { id: 2, active: false }, { id: 3, active: true }];
