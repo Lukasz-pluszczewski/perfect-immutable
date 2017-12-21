@@ -10,12 +10,12 @@ You're smart. You avoid mutating objects in your application. But you don't want
 `npm i perfect-immutable --save`
 
 ##### Import functions you need
-```
+```javascript
 import { set, splice, push, pop, shift, unshift, sort, reverse, filter, immutableDelete } from 'perfect-immutable';
 import immu from 'perfect-immutable'; // immu object has all above methods
 ```
 or, for functional programming friendly, auto-carried, predicate-first functions
-```
+```javascript
 import { fp } from 'perfect-immutable'; // fp object has all above methods
 ```
 
