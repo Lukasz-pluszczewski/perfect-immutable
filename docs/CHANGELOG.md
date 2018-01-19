@@ -12,3 +12,6 @@
 #### 1.3.0
 - Added transformFunction functionality in `set` method
 - Added functional (auto carried, options-first) versions of all methods
+
+#### 1.4.0
+- Extended immutableDelete function to support objects in addition to arrays
