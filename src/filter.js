@@ -2,10 +2,10 @@ import { filter } from 'lodash';
 
 /**
  * Returns new, array only with elements predicate returns truthy for
- * @param {array} arr source array
+ * @param {array|object} source array or object
  * @param {function} predicate function invoked per iteration
- * @return {array} new, filtered array
+ * @return {array|object} new, filtered array or object
  */
-const immutableFilter = (arr, predicate) => filter(arr, predicate);
+const immutableFilter = (source, predicate) => filter(source, predicate);
 
 export default immutableFilter;

@@ -15,6 +15,48 @@ case MY_FANCY_ACTION
  })(state);
 ```
 
+### immutableDelete
+```
+import { immutableDelete } from 'perfect-immutable';
+
+const arr1 = ['one', 'two', 'two', 'three'];
+const arr2 = fp.immutableDelete(1)(arr1);
+
+console.log(arr1); // ['one', 'two', 'two', 'three']
+console.log(arr2); // ['one', 'two', 'three']
+
+// works also on objects
+const obj1 = { foo: 1, bar: 2, baz: 3 };
+const obj2 = fp.immutableDelete('bar')(obj1);
+
+console.log(obj1); // { foo: 1, bar: 2, baz: 3 }
+console.log(obj2); // { foo: 1, baz: 3 }
+```
+
+### filter
+```
+import { fp } from 'perfect-immutable';
+
+const arr1 = [{ id: 1, active: true }, { id: 2, active: false }, { id: 3, active: true }];
+
+const arr2 = fp.filter('active')(arr1);
+const arr3 = fp.filter({ active: false })(arr1);
+const arr4 = fp.filter(el => el.id > 2)(arr1);
+
+console.log(arr1); // [{ id: 1, active: true }, { id: 2, active: false }, { id: 3, active: true }]
+console.log(arr2); // [{ id: 1, active: true }, { id: 3, active: true }]
+console.log(arr3); // [{ id: 2, active: false }]
+console.log(arr4); // [{ id: 3, active: true }]
+
+// works also on objects
+const obj1 = { foo: 1, bar: 2, baz: 3 };
+
+const obj2 = fp.filter(el => el > 2)(obj1);
+
+console.log(obj1); // { foo: 1, bar: 2, baz: 3 }
+console.log(obj2); // { baz: 3 }
+```
+
 ## Arrays functions
 
 ### splice
@@ -69,32 +111,3 @@ console.log(arr2); // [1, 3, 3, 4, 7]
 
 ### reverse
 fp version works exactly the same as it accepts only one argument ;)
-
-### immutableDelete
-```
-import { fp } from 'perfect-immutable';
-
-const arr1 = ['one', 'two', 'two', 'three'];
-const arr2 = fp.immutableDelete(1)(arr1);
-
-console.log(arr1); // ['one', 'two', 'two', 'three']
-console.log(arr2); // ['one', 'two', 'three']
-```
-
-### filter
-```
-import { fp } from 'perfect-immutable';
-
-const arr1 = [{ id: 1, active: true }, { id: 2, active: false }, { id: 3, active: true }];
-
-const arr2 = fp.filter('active')(arr1);
-const arr3 = fp.filter({ active: false })(arr1);
-const arr4 = fp.filter(el => el.id > 2)(arr1);
-
-console.log(arr1); // [{ id: 1, active: true }, { id: 2, active: false }, { id: 3, active: true }]
-console.log(arr2); // [{ id: 1, active: true }, { id: 3, active: true }]
-console.log(arr3); // [{ id: 2, active: false }]
-console.log(arr4); // [{ id: 3, active: true }]
-```
-
-

@@ -15,3 +15,6 @@
 
 #### 1.4.0
 - Extended immutableDelete function to support objects in addition to arrays
+
+#### 1.4.1
+- Updated docs for immutableDelete and filter

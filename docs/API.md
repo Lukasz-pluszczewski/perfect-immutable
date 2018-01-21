@@ -62,17 +62,17 @@
     - **array**: *array* source array
 - returns **newArray**
 
-#### `immutableDelete(array, index)`
+#### `immutableDelete(source, index)`
 - `import { immutableDelete } from 'perfect-immutable'`
-- creates new array with one element removed
+- creates new array or object with one element removed
 - arguments:
-    - **array**: *array* source array
-    - **index**: *number* index of element to be removed
-- returns **newArray**
+    - **source**: *array|object* source array or object
+    - **index**: *number|string* index of element to be removed
+- returns **newArrayOfObject**
 
-#### `filter(array, predicate)`
+#### `filter(source, predicate)`
 - `import { filter } from 'perfect-immutable';`
-- creates new array with elements predicate returned truthy for (is just a wrapper for lodash [filter](https://lodash.com/docs/4.17.4#filter) and can be used the same way
+- creates new array or object with elements predicate returned truthy for (is just a wrapper for lodash [filter](https://lodash.com/docs/4.17.4#filter) and can be used the same way
 - arguments:
-   - **array**: *array* source array
+   - **source**: *array|object* source array
    - **predicate**: *function|object|array|string* function invoked per iteration (see lodash filter documentation)
