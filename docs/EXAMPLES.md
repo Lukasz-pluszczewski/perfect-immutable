@@ -121,7 +121,7 @@ console.log(arr2); // ['one', 'two']
 import { shift } from 'perfect-immutable';
 
 const arr1 = ['one', 'two', 'three'];
-const arr2 = pop(arr1);
+const arr2 = shift(arr1);
 
 console.log(arr1); // ['one', 'two', 'three']
 console.log(arr2); // ['two', 'three']
@@ -132,7 +132,7 @@ console.log(arr2); // ['two', 'three']
 import { unshift } from 'perfect-immutable';
 
 const arr1 = ['three', 'four'];
-const arr2 = pop(arr1, 'one', 'two');
+const arr2 = unshift(arr1, 'one', 'two');
 
 console.log(arr1); // ['three', 'four']
 console.log(arr2); // ['one', 'two', 'three', 'four']

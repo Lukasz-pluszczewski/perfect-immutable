@@ -18,3 +18,6 @@
 
 #### 1.4.1
 - Updated docs for immutableDelete and filter
+
+#### 1.4.2
+- Updated docs
