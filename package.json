@@ -7,6 +7,7 @@
     "url": "https://github.com/Lukasz-pluszczewski/perfect-immutable"
   },
   "main": "lib/perfect-immutable.js",
+  "types": "src/index.d.ts",
   "module": "lib/perfect-immutable.mjs",
   "jsnext:main": "lib/perfect-immutable.mjs",
   "scripts": {
@@ -48,6 +49,8 @@
     "sinon": "4.1.3"
   },
   "dependencies": {
-    "lodash": "4.17.4"
+    "@types/lodash": "4.14.93",
+    "lodash": "4.17.4",
+    "typescript": "2.6.2"
   }
 }
