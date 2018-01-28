@@ -21,3 +21,6 @@
 
 #### 1.4.2
 - Updated docs
+
+#### 1.5.0
+- Set function now accepts number as path (interpreted as array index)

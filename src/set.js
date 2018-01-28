@@ -28,18 +28,19 @@ const setValue = (target, field, value, setFunction = false) => {
 /**
  * Works like lodash _.set() but does not mutate target, works with arrays
  * @param {object|array} target source object or array
- * @param {string|object} path or index in object to set value in or object with paths/indexes as keys and values as values (if path is an object it ignores 'value')
+ * @param {string|object|number} argPath or index in object to set value in or object with paths/indexes as keys and values as values (if path is an object it ignores 'value')
  * @param {any|function} value to set in given path/index or transform function that accepts current value and returns new one
  * @param {boolean} setFunction if true and value provided is a function it will be treated as simple value and saved to the target (instead of used as transform)
  * @return {object|array} new object or array with value(s) changed
  */
-const immutableSet = (target, path, value = null, setFunction = false) => {
+const immutableSet = (target, argPath, value = null, setFunction = false) => {
   if (!isArray(target) && !isPlainObject(target)) {
     throw new Error(`First argument provided to immutableSet function must be a plain object or array but it's type is ${typeof target}`);
   }
-  if (!isArray(path) && !isPlainObject(path) && !isString(path)) {
-    throw new Error(`Path passed to immutableSet function must be a string, array of strings and numbers or plain object but it's type is ${typeof path}`);
+  if (!isArray(argPath) && !isPlainObject(argPath) && !isString(argPath) && !isNumber(argPath)) {
+    throw new Error(`Path passed to immutableSet function must be a string, number, array of strings and numbers or plain object but it's type is ${typeof argPath}`);
   }
+  const path = isNumber(argPath) ? `[${argPath}]` : argPath;
 
   if (!path || (isArray(path) && !path.length)) {
     return value;

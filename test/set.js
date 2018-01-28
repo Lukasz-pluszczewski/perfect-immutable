@@ -178,7 +178,18 @@ describe('set', () => {
   it('should throw an error when provided with unsupported value as a first argument (not object/array)', () => {
     expect(() => set(2, '[2]', 'value')).to.throw(Error);
   });
-  it('should throw an error when provided with unsupported value as a second argument (not object/array/string)', () => {
-    expect(() => set({ foo: 'bar' }, 2, 'value')).to.throw(Error);
+  it('should not throw an error when provided with number as a second argument', () => {
+    expect(() => set(['foo', 'bar', 'baz'], 1, 'value')).to.not.throw(Error);
+  });
+  it('should set a value when provided with number as a second argument', () => {
+    const arr1 = ['foo', 'bar', 'baz'];
+
+    const arr2 = set(arr1, 1, 'newValue');
+
+    expect(arr2, 'Newly created object equals source object. It has probably been mutated').to.not.equal(arr1);
+    expect(arr2).to.deep.equal(['foo', 'newValue', 'baz']);
+  });
+  it('should throw an error when provided with unsupported value as a second argument (not object/array/string/number)', () => {
+    expect(() => set({ foo: 'bar' }, () => {}, 'value')).to.throw(Error); // eslint-disable-line no-empty-function
   });
 });
