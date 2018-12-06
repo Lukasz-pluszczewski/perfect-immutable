@@ -1,6 +1,7 @@
 {
   "name": "perfect-immutable",
   "version": "2.0.0",
+  "description": "Library to provide immutable methods (like immutable set similar to lodash's _.set) on standard JS objects",
   "main": "build/index.js",
   "scripts": {
     "start": "node scripts/start.js",
