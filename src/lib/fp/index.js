@@ -1,4 +1,4 @@
-import { curryRight } from 'lodash';
+import curryRight from 'lodash/curryRight';
 
 import immuSet from '../set';
 import immuSplice from '../splice';

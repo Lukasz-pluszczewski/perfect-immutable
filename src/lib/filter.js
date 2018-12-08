@@ -1,4 +1,4 @@
-import { filter } from 'lodash';
+import filter from 'lodash/filter';
 
 /**
  * Returns new, array only with elements predicate returns truthy for

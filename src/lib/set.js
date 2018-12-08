@@ -1,4 +1,12 @@
-import { tail, isPlainObject, isEmpty, has, reduce, isNumber, isString, isArray, isFunction } from 'lodash';
+import tail from 'lodash/tail';
+import isPlainObject from 'lodash/isPlainObject';
+import isEmpty from 'lodash/isEmpty';
+import has from 'lodash/has';
+import reduce from 'lodash/reduce';
+import isNumber from 'lodash/isNumber';
+import isString from 'lodash/isString';
+import isArray from 'lodash/isArray';
+import isFunction from 'lodash/isFunction';
 import stringToPath from './stringToPath';
 import splice from './splice';
 
