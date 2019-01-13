@@ -146,7 +146,7 @@ module.exports = {
     publicPath: publicPath,
     library: "perfect-immutable",
     libraryTarget: 'umd',
-    globalObject: "(typeof window !== 'undefined' ? window : this)",
+    globalObject: "(typeof window !== 'undefined' ? window : this)", // solving issue in https://github.com/webpack/webpack/issues/6522
     umdNamedDefine: true,
     // Point sourcemap entries to original disk location (format as URL on Windows)
     devtoolModuleFilenameTemplate: info =>
