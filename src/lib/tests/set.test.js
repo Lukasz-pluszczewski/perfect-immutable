@@ -159,7 +159,7 @@ describe('set', () => {
     expect(obj2).not.toBe(obj1);
     expect(obj2).toEqual({ foo: [1, transformFunction, 3] });
   });
-  it('should set a value returned by a transform function', () => {
+  it('should set a value in array returned by a transform function', () => {
     const transformFunction = x => x * 2;
     const obj1 = { foo: [1, 2, 3] };
 
@@ -168,6 +168,16 @@ describe('set', () => {
     // Newly created object equals source object. It has probably been mutated
     expect(obj2).not.toBe(obj1);
     expect(obj2).toEqual({ foo: [1, 4, 3] });
+  });
+  it('should set a value in object returned by a transform function', () => {
+    const transformFunction = x => x * 2;
+    const obj1 = { foo: 1 };
+
+    const obj2 = set(obj1, 'foo', transformFunction);
+
+    // Newly created object equals source object. It has probably been mutated
+    expect(obj2).not.toBe(obj1);
+    expect(obj2).toEqual({ foo: 2 });
   });
   it('should set a batch of values returned by a transform functions', () => {
     const transformFunction = x => x * 2;
@@ -181,6 +191,62 @@ describe('set', () => {
     // Newly created object equals source object. It has probably been mutated
     expect(obj2).not.toBe(obj1);
     expect(obj2).toEqual({ foo: [1, 4, 6] });
+  });
+
+  it('should return new value if provided with empty array path', () => {
+    const obj1 = { foo: 2 };
+
+    const result = set(obj1, [], 'newValue');
+
+    expect(result).not.toBe(obj1);
+    expect(result).toEqual('newValue');
+  });
+
+  it('should return new value if provided with empty string path', () => {
+    const obj1 = { foo: 2 };
+
+    const result = set(obj1, '', 'newValue');
+
+    expect(result).not.toBe(obj1);
+    expect(result).toEqual('newValue');
+  });
+
+  it('should return new value from a transform function if provided with empty array path', () => {
+    const transformFunction = x => ({ foo: x.foo * 2 });
+    const obj1 = { foo: 2 };
+
+    const obj2 = set(obj1, [], transformFunction);
+
+    expect(obj2).not.toBe(obj1);
+    expect(obj2).toEqual({ foo: 4 });
+  });
+
+  it('should return new value from a transform function if provided with empty string path', () => {
+    const transformFunction = x => ({ foo: x.foo * 2 });
+    const obj1 = { foo: 2 };
+
+    const obj2 = set(obj1, '', transformFunction);
+
+    expect(obj2).not.toBe(obj1);
+    expect(obj2).toEqual({ foo: 4 });
+  });
+
+  it('should return unchanged target if provided with null path', () => {
+    const obj1 = { foo: 'bar' };
+
+    const obj2 = set(obj1, null, 'newValue');
+
+    expect(obj2).toBe(obj1);
+    expect(obj2).toEqual({ foo: 'bar' });
+  });
+
+  it('should return unchanged target if provided with empty object path', () => {
+    const obj1 = { foo: 'bar' };
+
+    const obj2 = set(obj1, {}, 'newValue');
+
+    expect(obj2).toBe(obj1);
+    expect(obj2).toEqual({ foo: 'bar' });
   });
 
   it('should throw an error when provided with unsupported value as a first argument (not object/array)', () => {
@@ -201,4 +267,26 @@ describe('set', () => {
   it('should throw an error when provided with unsupported value as a second argument (not object/array/string/number)', () => {
     expect(() => set({ foo: 'bar' }, () => {}, 'value')).toThrowError(Error); // eslint-disable-line no-empty-function
   });
+
+  it('should throw an error when provided with path containing non-numerical array index', () => {
+    expect(() => set({ foo: [] }, 'foo[bar]', 'value')).toThrowError(Error); // eslint-disable-line no-empty-function
+  });
+
+  it('should throw an error when provided with path pointing to unsupported value (no object/array)', () => {
+    expect(() => set({ foo: 2 }, 'foo.bar', 'value')).toThrowError(Error); // eslint-disable-line no-empty-function
+  });
+
+  it('DELETE ME', () => {
+    const arr1 = [
+      { foo: 'two' },
+      { bar: 'three' },
+    ];
+
+    const arr2 = set(arr1, [0, 'foo'], 'four');
+
+    expect(arr2).toEqual([
+      { foo: 'four' },
+      { bar: 'three' },
+    ]);
+  })
 });

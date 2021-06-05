@@ -2,6 +2,7 @@
 /node_modules
 
 # testing
+/tests
 /coverage
 
 # docs
@@ -14,6 +15,7 @@
 .env.test.local
 .env.production.local
 /.github
+.idea
 /demo
 .esdoc.json
 
@@ -29,3 +31,10 @@ config
 .travis.yml
 CHANGELOG.md
 README.md
+.eslintignore
+.eslintrc.json
+.tsconfig.json
+webpack.config.js
+webpack.config.demo.js
+babel.config.js
+.cicrcleci

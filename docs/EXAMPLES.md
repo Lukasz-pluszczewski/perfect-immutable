@@ -1,7 +1,7 @@
 ## Objects and arrays functions
 ### set
 Imagine [reducer](https://redux.js.org/docs/basics/Reducers.html):
-```javascript
+```js
 case MY_FANCY_ACTION
  return {
    ...state,
@@ -16,7 +16,7 @@ case MY_FANCY_ACTION
 ```
 
 With prefect-immutable you can:
-```javascript
+```js
 import { set } from 'perfect-immutable';
 
 case MY_FANCY_ACTION
@@ -24,7 +24,7 @@ case MY_FANCY_ACTION
 ```
 
 You can even set multiple fields at once, and set values in arrays (without mutating them!) or providing transforming function:
-```javascript
+```js
 import { set, push } from 'perfect-immutable';
 
 case MY_FANCY_ACTION
@@ -40,7 +40,7 @@ case MY_FANCY_ACTION
 For examples of usage the functional versions of immutable methods see [here](EXAMPLESFP.md)
 
 ### immutableDelete
-```javascript
+```js
 import { immutableDelete } from 'perfect-immutable';
 
 const arr1 = ['one', 'two', 'two', 'three'];
@@ -58,7 +58,7 @@ console.log(obj2); // { foo: 1, baz: 3 }
 ```
 
 ### filter
-```javascript
+```js
 import { filter } from 'perfect-immutable';
 
 const arr1 = [{ id: 1, active: true }, { id: 2, active: false }, { id: 3, active: true }];
@@ -84,7 +84,7 @@ console.log(obj2); // { baz: 3 }
 ## Arrays functions
 
 ### splice
-```javascript
+```js
 import { splice } from 'perfect-immutable';
 
 const arr1 = ['first', 'two', 'three', 'fourth'];
@@ -95,7 +95,7 @@ console.log(arr2); // ['first', 'second', 'third', 'fourth']
 ```
 
 ### push
-```javascript
+```js
 import { push } from 'perfect-immutable';
 
 const arr1 = ['one', 'two'];
@@ -106,7 +106,7 @@ console.log(arr2); // ['one', 'two', 'three', 'four']
 ```
 
 ### pop
-```javascript
+```js
 import { pop } from 'perfect-immutable';
 
 const arr1 = ['one', 'two', 'three'];
@@ -117,7 +117,7 @@ console.log(arr2); // ['one', 'two']
 ```
 
 ### shift
-```javascript
+```js
 import { shift } from 'perfect-immutable';
 
 const arr1 = ['one', 'two', 'three'];
@@ -128,7 +128,7 @@ console.log(arr2); // ['two', 'three']
 ```
 
 ### unshift
-```javascript
+```js
 import { unshift } from 'perfect-immutable';
 
 const arr1 = ['three', 'four'];
@@ -139,7 +139,7 @@ console.log(arr2); // ['one', 'two', 'three', 'four']
 ```
 
 ### sort
-```javascript
+```js
 import { sort } from 'perfect-immutable';
 
 const arr1 = [4, 3, 1, 7, 3];
@@ -150,7 +150,7 @@ console.log(arr2); // [1, 3, 3, 4, 7]
 ```
 
 ### reverse
-```javascript
+```js
 import { reverse } from 'perfect-immutable';
 
 const arr1 = [4, 3, 2, 1];
