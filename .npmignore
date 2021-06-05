@@ -2,6 +2,7 @@
 /node_modules
 
 # testing
+/tests
 /coverage
 
 # docs
@@ -29,3 +30,7 @@ config
 .travis.yml
 CHANGELOG.md
 README.md
+.eslintignore
+.eslintrc.json
+webpack.config.js
+babel.config.js

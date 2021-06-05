@@ -12,11 +12,12 @@ You're smart. You avoid mutating objects in your application. But you don't want
 ##### Import functions you need
 ```javascript
 import { set, splice, push, pop, shift, unshift, sort, reverse, filter, immutableDelete } from 'perfect-immutable';
-import immu from 'perfect-immutable'; // immu object has all above methods
+import immutable from 'perfect-immutable'; // immutable object has all above methods
 ```
 or, for functional programming friendly, auto-carried, predicate-first functions
 ```javascript
-import { fp } from 'perfect-immutable'; // fp object has all above methods
+import { set, splice, push, pop, shift, unshift, sort, reverse, filter, immutableDelete } from 'perfect-immutable/fp';
+import immutable from 'perfect-immutable/fp'; // immutable object has all above methods
 ```
 
 ## Docs
@@ -42,7 +43,3 @@ There are at least 3 options:
 1. Add an issue, write test(s) for bug you found, write fix that will make your test(s) pass, submit pull request
 2. Add an issue, write test(s) for bug you found, submit pull request with you test(s)
 3. Add an issue
-
-## TODO
-- improve readme (add more, real life usage examples)
-- add delete that works with objects (or extend existing function)

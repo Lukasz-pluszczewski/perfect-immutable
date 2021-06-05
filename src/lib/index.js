@@ -1,15 +1,15 @@
-import immuSet from './set';
-import immuSplice from './splice';
-import immuPush from './push';
-import immuPop from './pop';
-import immuShift from './shift';
-import immuUnshift from './unshift';
-import immuSort from './sort';
-import immuReverse from './reverse';
-import immuDelete from './delete';
-import immuFilter from './filter';
+import immuSet from "./set";
+import immuSplice from "./splice";
+import immuPush from "./push";
+import immuPop from "./pop";
+import immuShift from "./shift";
+import immuUnshift from "./unshift";
+import immuSort from "./sort";
+import immuReverse from "./reverse";
+import immuDelete from "./delete";
+import immuFilter from "./filter";
 
-import immuFp from './fp/index';
+import immuFp from "./fp/index";
 
 export const set = immuSet;
 export const splice = immuSplice;
@@ -36,5 +36,3 @@ export default {
   filter,
   fp,
 };
-
-
