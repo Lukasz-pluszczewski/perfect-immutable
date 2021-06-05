@@ -2,6 +2,7 @@
 > Library to provide immutable methods (like immutable set similar to lodash's _.set) on standard JS objects
 
 [![CircleCI](https://circleci.com/gh/Lukasz-pluszczewski/perfect-immutable.svg?style=svg)](https://circleci.com/gh/Lukasz-pluszczewski/perfect-immutable)
+[![codecov](https://codecov.io/gh/Lukasz-pluszczewski/perfect-immutable/branch/master/graph/badge.svg?token=C9X4HFFPVO)](https://codecov.io/gh/Lukasz-pluszczewski/perfect-immutable)
 
 You're smart. You avoid mutating objects in your application. But you don't want to install big Immutable.js library and you don't want to refactor all your objects. Now you can have benefits of Immutable.js on normal JavaScript objects! Look for [real life exampes](docs/EXAMPLES.md).
 
