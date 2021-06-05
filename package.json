@@ -1,6 +1,6 @@
 {
   "name": "perfect-immutable",
-  "version": "3.0.0-rc.0",
+  "version": "3.0.0",
   "description": "Library to provide immutable methods (like immutable set similar to lodash's _.set) on standard JS objects",
   "main": "build/index.js",
   "types": "build/types/index.d.ts",
@@ -61,6 +61,10 @@
   },
   "dependencies": {
     "lodash": "^4.17.21"
+  },
+  "exports": {
+    ".": "./build/index.js",
+    "./fp": "./build/fp.js"
   },
   "jest": {
     "roots": [

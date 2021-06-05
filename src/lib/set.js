@@ -97,7 +97,6 @@ const immutableSet = (target, argPath, value = null, setFunction = false) => {
   if (!isArray(path)) {
     pathSplit = stringToPath(path);
   }
-  console.log("pathSplit?", pathSplit);
   if (pathSplit.length === 1) {
     return setValue(target, pathSplit[0], value, setFunction);
   }
